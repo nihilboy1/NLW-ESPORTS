@@ -1,20 +1,21 @@
-import React from 'react'
-import { ImageBackground } from 'react-native'
-import backgroundImage from '../../assets/background-galaxy.png'
-import { styles } from './styles'
+import { ImageBackground } from 'react-native';
 
-interface BackgroundProps {
-  children: React.ReactNode
+import backgroundImg from '../../assets/background-galaxy.png';
+
+import { styles } from './styles';
+
+interface Props {
+  children: React.ReactNode;
 }
 
-export function Background({ children }: BackgroundProps) {
+export function Background({ children }: Props) {
   return (
     <ImageBackground
-      source={backgroundImage}
+      source={backgroundImg}
+      defaultSource={backgroundImg}
       style={styles.container}
-      defaultSource={backgroundImage}
     >
       {children}
     </ImageBackground>
-  )
+  );
 }
